@@ -33,8 +33,17 @@
                             <input type="file" class="form-control-file" name="image">
                         </div>
                     </div>
-                    {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" value="更新">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <a href="{{ action('Admin\NewsController@index') }}" role="button" class="btn btn-primary">ニュース一覧へ</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

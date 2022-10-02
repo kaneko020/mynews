@@ -44,8 +44,17 @@
                             <textarea class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
-                    {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" value="更新">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <a href="{{ action('Admin\ProfileController@index') }}" role="button" class="btn btn-primary">プロフィール一覧へ</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
