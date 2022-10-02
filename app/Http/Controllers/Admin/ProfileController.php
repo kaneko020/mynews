@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Profile;
 
 class ProfileController extends Controller
@@ -36,5 +34,16 @@ class ProfileController extends Controller
     public function update()
     {
         return redirect('admin/profile/edit');
+    }
+    
+    public function index(Request $request)
+    {
+        $cond_name = $request->cond_name;
+        if($cond_name != ''){
+            $posts = Profile::where('name', $cond_name)->get();
+        }else{
+            $posts = Profile::all();
+        }
+        return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
 }
